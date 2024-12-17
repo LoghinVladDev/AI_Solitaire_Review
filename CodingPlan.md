@@ -32,7 +32,7 @@ Solution: Have the 7 piles be arrays where the cards go into.
 
 Task: Initialize these as four empty arrays.
 
-4. Gameplay.Stockpile: The rest of the cards are placed down in the stockpile.
+4. Gameplay.Pile: The rest of the cards are placed down in the stockpile.
 
 Task: Have the deck be able to exist in a dynamic way, where it can
 hold the cards it no longer has. Perhaps could be achieved by temporarily
@@ -65,7 +65,7 @@ show up. Then place other cards on top until you reach the kings in
 every pile.
     Move cards from one tableau pile to another.
 
-3. Gameplay.Stockpile and waste pile interaction: Draw cards from the stockpile 
+3. Gameplay.Pile and waste pile interaction: Draw cards from the stockpile 
 one at a time. If you can play a card, place it in a tableau or foundation.
 Otherwise, discard it to the waste pile.
     After exhausting your stockpile, reshuffle the waste pile and use it
