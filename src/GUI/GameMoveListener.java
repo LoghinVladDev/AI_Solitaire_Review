@@ -1,10 +1,7 @@
 package GUI;
 
 import Cards.Card;
-import Gameplay.Deck;
-import Gameplay.Foundations;
-import Gameplay.Tableau;
-import Gameplay.WastePile;
+import Gameplay.*;
 
 import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
@@ -17,7 +14,7 @@ public class GameMoveListener extends MouseInputAdapter {
     private Tableau selectedTableau = null;
     private Foundations selectedFoundation = null;
     private Card selectedCard = null;
-    private Button shuffleButton = null;
+    private ShuffleButton selectedShuffleButton = null;
 
 
     @Override
@@ -25,6 +22,7 @@ public class GameMoveListener extends MouseInputAdapter {
         Component pressedComponent = mouseEvent.getComponent().getComponentAt(mouseEvent.getPoint());
 
         if(pressedComponent instanceof Foundations) {
+            selectedShuffleButton =null;
             selectedFoundation = (Foundations) pressedComponent;
             selectedTableau = null;
             wastePile = null;
@@ -32,6 +30,7 @@ public class GameMoveListener extends MouseInputAdapter {
         }else if (pressedComponent instanceof Tableau) {
             selectedTableau = (Tableau) pressedComponent;
             wastePile = null;
+            selectedShuffleButton = null;
             selectedCard = selectedTableau.getClickedCard(mouseEvent.getY() - 150);
             selectedCard = selectedTableau.topCard();
             for(Foundations foundations: GamePanel.getFoundations()) {
@@ -42,6 +41,7 @@ public class GameMoveListener extends MouseInputAdapter {
             }
         } else if (pressedComponent instanceof Deck) {
             selectedTableau = null;
+            selectedShuffleButton = null;
             if(!deck.isEmpty()){
                 WastePile wastePile = GamePanel.getWastePile();
                 wastePile.push(deck.pop());
@@ -56,9 +56,14 @@ public class GameMoveListener extends MouseInputAdapter {
                     foundations.moveFromWastePile(wastePile, selectedCard);
                 }
             }
+        } else if (pressedComponent instanceof ShuffleButton) {
+            selectedTableau = null;
+            if (wastePile == null){
+                wastePile = GamePanel.getWastePile();
+            }
+            wastePile.reshuffle(deck);
+
         }
-
-
 
 
         mouseEvent.getComponent().repaint();
@@ -89,6 +94,7 @@ public class GameMoveListener extends MouseInputAdapter {
                 sourceFoundation.repaint();
                 destinationTableau.repaint();
             }
+            }
 
             mouseEvent.getComponent().repaint();
             selectedCard = null;
@@ -101,7 +107,7 @@ public class GameMoveListener extends MouseInputAdapter {
 
         }
 
-    }
+
 
 
 

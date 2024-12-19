@@ -1,9 +1,6 @@
 package GUI;
 
-import Gameplay.Deck;
-import Gameplay.Foundations;
-import Gameplay.Tableau;
-import Gameplay.WastePile;
+import Gameplay.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +16,7 @@ public class GamePanel extends JPanel {
     private static WastePile wastePile;
     private static Foundations[] foundations;
     private static Tableau[] tableaus;
+    private ShuffleButton shuffleButton;
 
     public GamePanel() throws IOException {
         super.setLayout(null);
@@ -53,7 +51,9 @@ public class GamePanel extends JPanel {
                 add(tableaus[i]);
             }
 
-
+            shuffleButton = new ShuffleButton(600,20, 100);
+            shuffleButton.setBounds(600, 20, 149, 49);
+            add(shuffleButton);
     }
 
     public static Foundations[] getFoundations() {
@@ -68,6 +68,7 @@ public class GamePanel extends JPanel {
         return deck;
     }
 
+
     @Override
     protected void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
@@ -76,3 +77,5 @@ public class GamePanel extends JPanel {
     }
 
 }
+
+

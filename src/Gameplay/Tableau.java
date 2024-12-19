@@ -28,7 +28,7 @@ public class Tableau extends Pile{
         super.paintComponent(graphics);
         Graphics2D g2d = (Graphics2D) graphics;
         g2d.setColor(Color.WHITE);
-        g2d.drawLine(0,0,this.getWidth(),0);
+        g2d.drawLine(0,0,this.getWidth(),0); //.getWidth() and .getHeight() come from extending JPanel
         g2d.drawLine(0,0,0, 97);
         g2d.drawLine(this.getWidth() -1, 0, this.getWidth() -1, 97);
 
