@@ -38,7 +38,7 @@ public class GamePanel extends JPanel {
             foundations = new Foundations[4];
 
             for (int i = 0; i < foundations.length; i++) {
-                foundations[i] = new Foundations(20 + XOffset*i, 20, i);
+                foundations[i] = new Foundations(20 + XOffset*i, 20, i + 1);
                 add(foundations[i]);
             }
 

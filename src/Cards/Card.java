@@ -1,9 +1,7 @@
 package Cards;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -17,7 +15,7 @@ public class Card {
     public static String cardImageDirectory = "/Cards/cardImages", extension = ".png";
     private String suit;
 
-    public Card(Suit suit, Integer rank) throws IOException {
+    public Card(Suit suit, Integer rank) {
         this.rank = rank;
         switch (suit) {
             case CLUBS -> {

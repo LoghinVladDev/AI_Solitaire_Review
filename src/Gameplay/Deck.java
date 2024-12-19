@@ -20,9 +20,6 @@ public class Deck extends Pile {
         }
 
         Collections.shuffle(cards);
-
-
-
     }
 
     @Override

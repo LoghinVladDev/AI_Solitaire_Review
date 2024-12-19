@@ -1,7 +1,6 @@
 package Gameplay;
 
 import Cards.Card;
-import Cards.Suit;
 
 import java.awt.*;
 import java.util.Objects;
@@ -41,18 +40,23 @@ public class Foundations extends Pile {
 
     public boolean accepts(Card card){
         if (!this.isEmpty()){
-            return this.topCard().getRank() == card.getRank() - 1
+            boolean validPlacement = this.topCard().getRank() == card.getRank() - 1
                     && Objects.equals(this.topCard().getSuit(), card.getSuit());
+            //checks that the sitting card's rank is 1 smaller than the incoming card's rank
+
+            return validPlacement;
         }
-        return card.getRank() == 1 &&
+        boolean isValidPlacement = card.getRank() == 1 && //only aces are placed first
                 intToSuit(card.getSuit());
+
+        return isValidPlacement;
     }
 
     private boolean intToSuit(String fileSuit) {
         return switch (fileSuit.toLowerCase()) {
-            case "clubs" -> this.suit == 3;
             case "spades" -> this.suit == 1;
             case "hearts" -> this.suit == 2;
+            case "clubs" -> this.suit == 3;
             case "diamonds" -> this.suit == 4;
             default -> false;
         };
