@@ -1,6 +1,7 @@
 package Gameplay;
 
 import Cards.Card;
+import GUI.GamePanel;
 
 import java.awt.*;
 import java.util.ArrayDeque;
@@ -9,9 +10,17 @@ import java.util.Objects;
 
 public class Tableau extends Pile{
 
-    public Tableau(int x, int y) {
+    public Tableau(int x, int y, int initSize) {
         super(x, y);
-        super.setSize(67, 97);
+        super.setSize(67, 450);
+        super.setOpaque(false);
+        for (int i =0; i < initSize; i++){
+            push(GamePanel.getDeck().pop());
+        }
+
+        if (initSize > 0){
+            topCard().showFace();
+        }
     }
 
     @Override
@@ -56,7 +65,6 @@ public class Tableau extends Pile{
         if(this.accepts(card)){
             this.push(wastePile.pop());
         }
-        wastePile = null;
     }
 
     public boolean moveToFoundation(Foundations foundation, Card card){
@@ -74,7 +82,7 @@ public class Tableau extends Pile{
     }
 
     public void moveToOtherTableau(Tableau tableau, Card card){
-        if(!this.isEmpty() || card.getRank() ==13){
+        if(!this.isEmpty() || !this.isEmpty() && card.getRank() ==13){
             if(tableau.accepts(card)) {
                 Deque<Card> cardsToBeMoved = new ArrayDeque<>(); //grows as needed, like a Python list
                 //not thread safe

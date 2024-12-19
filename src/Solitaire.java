@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Solitaire extends JFrame {
 
     static protected GamePanel gamePanel;
-    public static final int gamePanelWidth = 720;
+    public static final int gamePanelWidth = 600;
     public static final int gamePanelHeight = 480;
 
     public Solitaire() throws IOException {

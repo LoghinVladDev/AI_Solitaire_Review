@@ -49,16 +49,13 @@ public class Foundations extends Pile {
     }
 
     private boolean intToSuit(String fileSuit) {
-        if (fileSuit.equals("clubs")) {
-            return this.suit == 3;
-        } else if (fileSuit.equals("spades")) {
-            return this.suit == 1;
-        } else if (fileSuit.equals("hearts")) {
-            return this.suit == 2;
-        } else if (fileSuit.equals("diamonds")) {
-            return this.suit == 4;
-        }
-        return false;
+        return switch (fileSuit.toLowerCase()) {
+            case "clubs" -> this.suit == 3;
+            case "spades" -> this.suit == 1;
+            case "hearts" -> this.suit == 2;
+            case "diamonds" -> this.suit == 4;
+            default -> false;
+        };
     }
 
 

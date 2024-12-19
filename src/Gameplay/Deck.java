@@ -20,6 +20,9 @@ public class Deck extends Pile {
         }
 
         Collections.shuffle(cards);
+
+
+
     }
 
     @Override
@@ -34,11 +37,7 @@ public class Deck extends Pile {
             graphics.drawImage(Card.getCardBack(), 0,0, this.getWidth(), this.getHeight(), this);
         } //just need to draw the card back for the deck since all the cards are face down
 
-
-
-
     }
-
 
 }
 

@@ -49,9 +49,11 @@ public class GamePanel extends JPanel {
             tableaus = new Tableau[7];
             for (int i =0; i < tableaus.length; i++){
                 tableaus[i] = new Tableau(tableauPosition.x + tableauOffset * (i),
-                        tableauPosition.y);
+                        tableauPosition.y, i +1);
                 add(tableaus[i]);
             }
+
+
     }
 
     public static Foundations[] getFoundations() {

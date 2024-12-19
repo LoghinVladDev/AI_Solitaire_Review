@@ -17,6 +17,7 @@ public class GameMoveListener extends MouseInputAdapter {
     private Tableau selectedTableau = null;
     private Foundations selectedFoundation = null;
     private Card selectedCard = null;
+    private Button shuffleButton = null;
 
 
     @Override
@@ -31,6 +32,7 @@ public class GameMoveListener extends MouseInputAdapter {
         }else if (pressedComponent instanceof Tableau) {
             selectedTableau = (Tableau) pressedComponent;
             wastePile = null;
+            selectedCard = selectedTableau.getClickedCard(mouseEvent.getY() - 150);
             selectedCard = selectedTableau.topCard();
             for(Foundations foundations: GamePanel.getFoundations()) {
                 if(selectedTableau.moveToFoundation(foundations, selectedCard)){
@@ -55,6 +57,10 @@ public class GameMoveListener extends MouseInputAdapter {
                 }
             }
         }
+
+
+
+
         mouseEvent.getComponent().repaint();
     }
 
