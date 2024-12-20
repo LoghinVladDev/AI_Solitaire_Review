@@ -40,16 +40,15 @@ public class Foundations extends Pile {
 
     public boolean accepts(Card card){
         if (!this.isEmpty()){
-            boolean validPlacement = this.topCard().getRank() == card.getRank() - 1
-                    && Objects.equals(this.topCard().getSuit(), card.getSuit());
             //checks that the sitting card's rank is 1 smaller than the incoming card's rank
 
-            return validPlacement;
+            return this.topCard().getRank() == card.getRank() - 1
+                    && Objects.equals(this.topCard().getSuit(), card.getSuit());
         }
-        boolean isValidPlacement = card.getRank() == 1 && //only aces are placed first
-                intToSuit(card.getSuit());
+        //only aces are placed first
 
-        return isValidPlacement;
+        return card.getRank() == 1 && //only aces are placed first
+                intToSuit(card.getSuit());
     }
 
     private boolean intToSuit(String fileSuit) {

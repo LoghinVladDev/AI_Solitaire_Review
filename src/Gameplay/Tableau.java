@@ -12,7 +12,7 @@ public class Tableau extends Pile{
 
     public Tableau(int x, int y, int initSize) {
         super(x, y);
-        super.setSize(67, 450);
+        super.setSize(67, 300);
         super.setOpaque(false);
         for (int i =0; i < initSize; i++){
             push(GamePanel.getDeck().pop());
@@ -54,66 +54,77 @@ public class Tableau extends Pile{
     }
 
     public boolean accepts(Card card) {
-        if(!this.isEmpty()){
-         return this.topCard().getRank() == card.getRank() + 1 &&
-                 !Objects.equals(this.topCard().getColor(), card.getColor());
-        }
+        if(!this.isEmpty()){  //if the tableau is not empty enter the conditional statement
+         return this.topCard().getRank() == card.getRank() + 1 &&  //checks if the current top card's rank is 1 higher
+                                                                    //than the incoming card's rank
+                 !Objects.equals(this.topCard().getColor(), card.getColor()); //and checks that their colors are different
+        } //if the tableau is empty, it returns true only for Kings, which can be any color
         return card.getRank() == 13;
     }
 
     public void moveFromWastePile(WastePile wastePile, Card card) {
-        if(this.accepts(card)){
-            this.push(wastePile.pop());
+        if(this.accepts(card)){  //if the rank is satisfactory
+            this.push(wastePile.pop());  //add the returned card from the wastepile
         }
     }
 
-    public boolean moveToFoundation(Foundations foundation, Card card){
-        if(foundation.accepts(card)) {
+    public boolean moveTo(Foundations foundation, Card card){
+        if(card !=null && foundation.accepts(card)) {
             foundation.push(this.pop());
-
             if (!this.isEmpty()) {
                 this.topCard().showFace();
             }
             return true;
         }
         return false;
-
-
     }
 
-    public void moveToOtherTableau(Tableau tableau, Card card){
-        if(!this.isEmpty() || !this.isEmpty() && card.getRank() ==13){
-            if(tableau.accepts(card)) {
-                Deque<Card> cardsToBeMoved = new ArrayDeque<>(); //grows as needed, like a Python list
-                //not thread safe
-
-                while (!this.isEmpty()) {
+    public void moveTo(Tableau destination, Card card) {
+        if (!this.isEmpty() || card.getRank() == 13) {
+            if (destination.accepts(card)) {
+                Deque<Card> toBeMovedCards  = new ArrayDeque<>();
+                while(!this.isEmpty()) {
                     Card top = this.pop();
-                    cardsToBeMoved.push(top);
-                    if (top.equals(card)) {
+                    toBeMovedCards.push(top);
+                    if(top.equals(card)) {
                         break;
                     }
                 }
-                while(!cardsToBeMoved.isEmpty()){
-                    tableau.push(cardsToBeMoved.pop());
-                }
-                if(!this.isEmpty()){
-                    this.topCard().showFace();
+                while(!toBeMovedCards.isEmpty()) {
+                    destination.push(toBeMovedCards.pop());
+                    toBeMovedCards.removeAll(cards);
                 }
 
             }
+        }
+
+        if(!this.isEmpty()) {
+            this.topCard().showFace();
         }
     }
 
-    public Card getClickedCard(int y){
-        int index = y/20;
-        if(index < this.cards.toArray().length){
-            Card toBeReturned = (Card) cards.toArray()[index];
-            if (toBeReturned.isFaceUp()){
-                return toBeReturned;
+
+    public Card getClickedCard(int y) {
+        int faceUpStartIndex = 0;
+
+        for (int i = 0; i < cards.size(); i++) { //gets the index of the first face up card in the tableau
+            if (cards.get(i).isFaceUp()) {
+                faceUpStartIndex = i;
+                break;
             }
         }
-        return (Card) cards.toArray()[cards.toArray().length - 1];
+
+        int index  = faceUpStartIndex + y/240; //250 to start with, 240 means the face up card above the previous one
+                                            //begins roughly where the one below ends
+        if (index < cards.size()){
+            System.out.println(index);
+            System.out.print(cards.get(index).getRank() + " ");
+            System.out.print(cards.get(index).getSuit());
+            return cards.get(index);
+        }
+
+        return cards.get(cards.size() - 1); //returns last card if index out of bounds
+
     }
 
 
