@@ -8,10 +8,10 @@ import java.io.IOException;
 
 public class GamePanel extends JPanel {
 
-    protected static int XOffset = 80;
-    public static Point deckPosition = new Point(500, 20);
+    protected static int XOffset = 100;
+    public static Point deckPosition = new Point(620, 20);
     public static Point tableauPosition = new Point(20, 150);
-    public static int tableauOffset = 80;
+    public static int tableauOffset = 100;
     private static Deck deck;
     private static WastePile wastePile;
     private static Foundations[] foundations;
@@ -50,7 +50,7 @@ public class GamePanel extends JPanel {
             }
 
             shuffleButton = new ShuffleButton(600,20, 100);
-            shuffleButton.setBounds(600, 20, 149, 49);
+            shuffleButton.setBounds(700, 20, 149, 49);
             add(shuffleButton);
     }
 

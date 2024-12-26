@@ -107,24 +107,28 @@ public class Tableau extends Pile{
     public Card getClickedCard(int y) {
         int faceUpStartIndex = 0;
 
-        for (int i = 0; i < cards.size(); i++) { //gets the index of the first face up card in the tableau
+        // Find the first face-up card
+        for (int i = 0; i < cards.size(); i++) {
             if (cards.get(i).isFaceUp()) {
                 faceUpStartIndex = i;
-                break;
+                break; //need to get the position of the card at the faceUpStartIndex
+                      //getting the index is basically hardcoding an anchor point
             }
         }
 
-        int index  = faceUpStartIndex + y/240; //250 to start with, 240 means the face up card above the previous one
-                                            //begins roughly where the one below ends
-        if (index < cards.size()){
-            System.out.println(index);
-            System.out.print(cards.get(index).getRank() + " ");
-            System.out.print(cards.get(index).getSuit());
+        // Adjust Y-coordinate relative to tableau start
+        int cardOverlap = 75; // Actual overlap between face-up cards
+        int relativeY = y - GamePanel.tableauPosition.y;
+
+        // Calculate the index
+        int index = faceUpStartIndex + (relativeY / cardOverlap);
+
+        // Validate index
+        if (index >= 0 && index < cards.size()) {
             return cards.get(index);
         }
 
-        return cards.get(cards.size() - 1); //returns last card if index out of bounds
-
+        return null; // No valid card clicked
     }
 
 
