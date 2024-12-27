@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1328aaa6-1e89-49e1-bf2f-c910a36fd593" name="Changes" comment="Removed for review">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodingPlan.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Solitaire.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/Suit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/10_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/10_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/10_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/10_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/11_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/11_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/11_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/11_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/12_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/12_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/12_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/12_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/13_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/13_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/13_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/13_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/1_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/1_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/1_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/1_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/2_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/2_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/2_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/2_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/3_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/3_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/3_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/3_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/4_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/4_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/4_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/4_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/5_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/5_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/5_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/5_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/6_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/6_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/6_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/6_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/7_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/7_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/7_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/7_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/8_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/8_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/8_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/8_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/9_of_clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/9_of_diamonds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/9_of_hearts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/9_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cards/cardImages/card_back_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/GameMoveListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/GamePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gameplay/Deck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gameplay/Foundations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gameplay/GameplayImages/ShuffleButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gameplay/Pile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gameplay/ShuffleButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gameplay/Tableau.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gameplay/WastePile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Solitaire.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2qmCjydu7am79lBCHZOgaai33Lj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Solitaire.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1328aaa6-1e89-49e1-bf2f-c910a36fd593" name="Changes" comment="" />
+      <created>1735258503413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735258503413</updated>
+      <workItem from="1735258504713" duration="60000" />
+      <workItem from="1735258566609" duration="116000" />
+      <workItem from="1735258684526" duration="444000" />
+      <workItem from="1735259130547" duration="9000" />
+    </task>
+    <task id="LOCAL-00001" summary="Removed for review">
+      <option name="closed" value="true" />
+      <created>1735258619074</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735258619074</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removed for review" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed for review" />
+  </component>
+</project>
