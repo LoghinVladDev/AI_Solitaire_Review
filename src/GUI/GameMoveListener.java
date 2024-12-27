@@ -31,7 +31,8 @@ public class GameMoveListener extends MouseInputAdapter {
             selectedTableau = (Tableau) pressedComponent;
             wastePile = null;
             selectedShuffleButton = null;
-            selectedCard = selectedTableau.getClickedCard(mouseEvent.getY() - 20);
+            selectedCard = selectedTableau.getClickedCard(mouseEvent.getY() - 100);
+            System.out.println("Click y coordinate: " + mouseEvent.getY());
             System.out.println("Selected card from tableau: " + selectedCard);
 
             for(Foundations foundations: GamePanel.getFoundations()) {

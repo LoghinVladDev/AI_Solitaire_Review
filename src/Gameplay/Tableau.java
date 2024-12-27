@@ -4,15 +4,13 @@ import Cards.Card;
 import GUI.GamePanel;
 
 import java.awt.*;
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Objects;
+import java.util.*;
 
 public class Tableau extends Pile{
 
     public Tableau(int x, int y, int initSize) {
         super(x, y);
-        super.setSize(67, 300);
+        super.setSize(67, 600);
         super.setOpaque(false);
         for (int i =0; i < initSize; i++){
             push(GamePanel.getDeck().pop());
@@ -32,8 +30,8 @@ public class Tableau extends Pile{
         g2d.drawLine(0,0,0, 97);
         g2d.drawLine(this.getWidth() -1, 0, this.getWidth() -1, 97);
 
-        g2d.setPaint(new GradientPaint(36, 0, new Color(255, 255, 255, 160), 36, 60,
-                new Color(0,0,0,0)));
+        g2d.setPaint(new GradientPaint(36, 0, new Color(255, 255, 255, 160), 36, 67,
+                new Color(0,0,0,0))); //y2 is 60, so likely 60 overlap
         g2d.fillRect(0,0,this.getWidth(),this.getHeight());
 
         int cardYPos = 0;
@@ -43,10 +41,10 @@ public class Tableau extends Pile{
             for (Card card: this.cards){
                 if (card.isFaceUp()){
                     graphics.drawImage(card.getCardFront(), 0, cardYPos, 67, 97, this);
-                    cardYPos += 20; //above reference to card object
+                    cardYPos += 45; //above reference to card object
                 } else {
                     graphics.drawImage(Card.getCardBack(), 0 ,cardYPos, 67, 97, this);
-                    cardYPos += 20; //above reference to card class
+                    cardYPos += 45; //above reference to card class
                 }
             }
         }
@@ -106,22 +104,23 @@ public class Tableau extends Pile{
 
     public Card getClickedCard(int y) {
         int faceUpStartIndex = 0;
-
+        Stack<Object> faceUpCards = new Stack<>(); //last in, first out, more efficient
         // Find the first face-up card
         for (int i = 0; i < cards.size(); i++) {
             if (cards.get(i).isFaceUp()) {
                 faceUpStartIndex = i;
+
                 break; //need to get the position of the card at the faceUpStartIndex
                       //getting the index is basically hardcoding an anchor point
             }
         }
 
         // Adjust Y-coordinate relative to tableau start
-        int cardOverlap = 75; // Actual overlap between face-up cards
-        int relativeY = y - GamePanel.tableauPosition.y;
+        int cardOverlap = 60; //Overlap has been lowered
 
-        // Calculate the index
-        int index = faceUpStartIndex + (relativeY / cardOverlap);
+        //Divide point in vector space by card overlap
+        //Functions better but single cards return null when clicked
+        int index = y/ cardOverlap;
 
         // Validate index
         if (index >= 0 && index < cards.size()) {

@@ -6,8 +6,8 @@ import java.io.IOException;
 public class Solitaire extends JFrame {
 
     static protected GamePanel gamePanel;
-    public static final int gamePanelWidth = 640;
-    public static final int gamePanelHeight = 500;
+    public static final int gamePanelWidth = 1080;
+    public static final int gamePanelHeight = 1920;
 
     public Solitaire() throws IOException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
